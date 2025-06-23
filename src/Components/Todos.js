@@ -5,18 +5,18 @@ import UpdateDialogue from './UpdateDialogue';
 const Todos = (props) => {
   const [editModal, setEditModal] = useState(false);
   const [selectedData, setSelectedData] = useState({});
-  const [todos, setTodos] = useState(props.todos);
-
+ 
   const handleEdit = (obj) => {
     setSelectedData(obj);
     setEditModal(true);
   };
 
+  // ✅ Update the todo in state
   const handleUpdate = (updatedTodo) => {
-    const updatedList = todos.map((todo) =>
+    const updatedList = props.todos.map((todo) =>
       todo.sno === updatedTodo.sno ? updatedTodo : todo
     );
-    setTodos(updatedList);
+    props.setTodos(updatedList);
     setEditModal(false);
   };
 
@@ -24,12 +24,12 @@ const Todos = (props) => {
     <div className="container">
       <h3 className="m-5">Todos Works</h3>
 
-      {todos.length === 0 ? (
+      {props.todos?.length === 0 ? (
         <div className="alert alert-success" role="alert">
           No Todos to display at this time
         </div>
       ) : (
-        todos.map((todo) => (
+        props.todos?.map((todo) => (
           <Todoitem
             todos={todo}
             key={todo.sno}

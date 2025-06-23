@@ -26,18 +26,17 @@ function App() {
     localStorage.setItem("todos", JSON.stringify(todos));
   };
 
-  const onChange = (todo) => {
-    console.log("List has been updated", todo);
-  }
+
+  // UPDATE FUNCTION
 
   // ADD FUNCTION
   const addTodo = (title, desc) => {
     console.log("I am adding this Todo List", title, desc);
     let sno;
-    if (todos.length == 0) {
+    if (todos?.length == 0) {
       sno = 0;
     } else {
-      sno = todos[todos.length - 1].sno + 1;
+      sno = todos[todos?.length - 1].sno + 1;
     }
     const myTodo = {
       sno: sno,
@@ -65,8 +64,9 @@ function App() {
               path="/"
               element={
                   <>
+                  {/* child */}
                     <AddTodo addTodo={addTodo} />
-                    <Todos todos={todos} onDelete={onDelete} onChange={onChange}  />
+                    <Todos todos={todos} onDelete={onDelete} setTodos={setTodos}/>
                   </>
               }
             ></Route>
