@@ -36,3 +36,42 @@
     transform: rotate(360deg);
   }
 }
+
+
+/* MY CSS */
+.todo-cards {
+  display: inline-grid;
+  border: 1px solid #f8f9fa;
+  padding: 5rem 0;
+  width: 100vw;
+  max-width: 24rem;
+  margin: 0.75rem;
+  border-radius: 1rem;
+}
+.todo-cards:hover {
+  border: 2px solid #b6b6b6;
+  transition: 1s ease;
+}
+.bg-dark.text-light {
+  min-height: 139px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ml-1 {
+  margin-left: 5px;
+}
+input#title {
+  width: 100%;
+  max-width: 700px;
+}
+input#desc {
+  width: 100%;
+  max-width: 700px;
+}
+.form-label {
+  margin-bottom: .5rem;
+  width: 100%;
+  text-align: justify;
+}
