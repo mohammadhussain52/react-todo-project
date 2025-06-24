@@ -7,6 +7,7 @@ import AddTodo from "./Components/AddTodo";
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+
 function App() {
   let initTodo;
   if (localStorage.getItem("todos") === null) {
@@ -15,12 +16,13 @@ function App() {
     initTodo = JSON.parse(localStorage.getItem("todos"));
   }
   // DELETE FUNCTION
+ 
   const onDelete = (todo) => {
     console.log("List has been deleted", todo);
-
     setTodos(
       todos.filter((todos) => {
         return todos !== todo;
+      
       })
     );
     localStorage.setItem("todos", JSON.stringify(todos));
@@ -65,7 +67,7 @@ function App() {
                   <>
                   {/* child */}
                     <AddTodo addTodo={addTodo} />
-                    <Todos todos={todos} onDelete={onDelete} setTodos={setTodos}/>
+                    <Todos todos={todos} onDelete={onDelete} setTodos={setTodos} />
                   </>
               }
             ></Route>

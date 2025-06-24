@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+
 
 
 const AddTodo = (props) => {
     const [title, setTitle] = useState("")
     const [desc, setDesc] = useState("")
+    const notify = () => toast('Todo Added Successfully');
 
     const submit =(e) => {
         e.preventDefault()
@@ -15,7 +18,10 @@ const AddTodo = (props) => {
         setTitle("");
         setDesc("");
       }
+
     }
+    <ToastContainer position="top-right" />
+   
     
   return (
     <div className="container my-3">
@@ -46,11 +52,15 @@ const AddTodo = (props) => {
           onChange={(e)=>{setDesc(e.target.value)}}
         />
       </div>
-      <button type="submit" className="btn btn-danger" style={{display: 'flex'}}>
+      <button type="submit" className="btn btn-danger" style={{display: 'flex'}} onClick={notify}>
         Add To do
       </button>
     </form>
+    <div className="grid place-items-center h-dvh bg-zinc-900/15">
+      <ToastContainer />
     </div>
+    </div>
+    
   );
 };
 

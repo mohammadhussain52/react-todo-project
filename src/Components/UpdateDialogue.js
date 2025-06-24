@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Modal, Button } from "react-bootstrap";
+import { ToastContainer, toast } from 'react-toastify';
+
 
 const UpdateDialogue = ({ isOpen, toggle, title, data, onUpdate }) => {
   const [inputData, setInputData] = useState({});
+  const notify = () => toast('Todo Updated Successfully');
  
 
   useEffect(() => {
@@ -56,7 +59,10 @@ const UpdateDialogue = ({ isOpen, toggle, title, data, onUpdate }) => {
               onChange={handleInput}
             />
           </div>
-          <Button type="submit" variant="danger">Update</Button>
+          <Button type="submit" variant="danger" onClick={notify}>Update</Button>
+          <div className="grid place-items-center h-dvh bg-zinc-900/15">
+          <ToastContainer />
+          </div>
         </form>
       </Modal.Body>
       <Modal.Footer>
