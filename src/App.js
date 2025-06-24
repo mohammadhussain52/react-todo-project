@@ -27,7 +27,6 @@ function App() {
   };
 
 
-  // UPDATE FUNCTION
 
   // ADD FUNCTION
   const addTodo = (title, desc) => {

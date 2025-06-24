@@ -11,7 +11,7 @@ const Todos = (props) => {
     setEditModal(true);
   };
 
-  // ✅ Update the todo in state
+  //  Update the todo in state
   const handleUpdate = (updatedTodo) => {
     const updatedList = props.todos.map((todo) =>
       todo.sno === updatedTodo.sno ? updatedTodo : todo
