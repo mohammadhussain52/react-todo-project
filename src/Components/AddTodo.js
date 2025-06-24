@@ -26,8 +26,8 @@ const AddTodo = (props) => {
   return (
     <div className="container my-3">
         <h3>Add a Todo</h3>
-    <form onSubmit={submit}>
-      <div className="mb-3">
+    <form onSubmit={submit} className="add-to-do-form">
+      <div className="mb-3" style={{width: '100%', maxWidth: '700px'}}>
         <label htmlFor="Title" className="form-label">
           Todo Title
         </label>
@@ -40,7 +40,7 @@ const AddTodo = (props) => {
           onChange={(e)=>{setTitle(e.target.value)}}
         />
       </div>
-      <div className="mb-3">
+      <div className="mb-3" style={{width: '100%', maxWidth: '700px'}}>
         <label htmlFor="desc" className="form-label">
           Todo Description
         </label>

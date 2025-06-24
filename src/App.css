@@ -41,7 +41,7 @@
 /* MY CSS */
 .todo-cards {
   display: inline-grid;
-  border: 1px solid #f8f9fa;
+  border: 1px solid #212529;
   padding: 5rem 0;
   width: 100vw;
   max-width: 24rem;
@@ -74,4 +74,11 @@ input#desc {
   margin-bottom: .5rem;
   width: 100%;
   text-align: justify;
+}
+.add-to-do-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
