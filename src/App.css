@@ -82,3 +82,8 @@ input#desc {
   align-items: center;
   width: 100%;
 }
+@media (max-width:450px){
+  .todo-cards {
+    max-width: fit-content;
+}
+}
